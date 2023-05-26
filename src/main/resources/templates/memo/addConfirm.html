@@ -14,11 +14,11 @@
 		<h2>この内容でよろしいですか</h2>
 		<form action="#" method="get" th:action="@{/memo/view}">
 			<p>
-				番号:<span th:text="*{id}"></span> <input type="hidden" name="id" th:value="*{id}">
+				日付:<span th:text="*{id}"></span> <input type="hidden" name="id" th:value="*{id}">
 			</p>
 			<p>
 				<span th:text="*{memo}"></span>
-				メモ内容: <input type="hidden" name="memo" th:value="*{memo}">
+				メモ: <input type="hidden" name="memo" th:value="*{memo}">
 			</p>
 			<input type="submit" value="追加">
 		</form>
