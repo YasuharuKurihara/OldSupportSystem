@@ -1,7 +1,7 @@
 CREATE TABLE memo(
 	id INT NOT NULL AUTO_INCREMENT,
-	Math INT,
-	Day INT,
+	Month INT,
+	Date INT,
 	memo Text,
 	PRIMARY KEY(id)
 );
