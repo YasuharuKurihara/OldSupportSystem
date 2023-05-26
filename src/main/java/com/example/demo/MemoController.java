@@ -24,7 +24,7 @@ public class MemoController {
 
 		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
-		model.addAttribute("title", "一覧ページ");
+		model.addAttribute("title", "メモ一覧");
 		return "view";
 	}
 	
