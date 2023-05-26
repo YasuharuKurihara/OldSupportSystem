@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>健康管理メモ</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+	<!--	?は要変更-->
+	<!--	タイトル-->
+	<h1 th:text="${???}"></h1>
+	<!--	入力-->
+	<form method="get" action="#" th:action="@{/????}" th:object="${????}">
+		<p>日付：<input type="date" name="??" th:value="*{?}"></p>
+		<div th:if="${#fields.hasErrors('?')}" th:errors="*{?}">エラー</div>
+		<p>メモ：<input type="text" name="?" th:value="*{?}"></p>
+		<div th:if="${#fields.hasErrors('?')}" th:errors="*{?}">エラー</div>
+		<input type="submit" value="登録" class="button">
+	</form>
+	<!--	一覧表示-->
+
+	<table class="tableArea" id="makeImg">
+		<tr>
+			<th>id</th>
+			<th>体温</th>
+			<th>体重</th>
+		</tr>
+		<tr th:each="res : ${dbList}">
+			<td th:text="${res.id}">1</td>
+			<td th:text="${res.?}">日付</td>
+			<td th:text="${res.?}">メモ</td>
+			<td>
+				<form th:action="@{/??/{id}(id=${res.id})}">
+					<input type="submit" value="編集">
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/del/{id}(id=${res.id})}">
+					<input type="submit" value="削除" />
+				</form>
+			</td>
+		</tr>
+	</table>
+	<!--	入力だけのページに戻る-->
+	<p><a href="/???" th:href="@{/???}" class="button">入力画面へ</a></p>
+</body>
+
+</html>
