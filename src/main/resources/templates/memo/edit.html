@@ -10,7 +10,7 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
-		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
+		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
 			<p>
 				番号:<span th:text="*{id}"></span> <input type="hidden" name="id" th:value="*{id}">
 			</p>
@@ -20,7 +20,7 @@
 			<input type="submit" value="更新">
 		</form>
 		<form action="#" method="get" th:action="@{/editCancel/__*{id}__/exe}">
-			<input type="text" name="editCancel" th:value="キャンセル">
+			<input type="text" value="キャンセル">
 		</form>
 	</div>
 </body>
