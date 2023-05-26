@@ -19,9 +19,9 @@
 				<span th:text="*{name}"></span>
 				メモ内容: <input type="hidden" name="memo" th:value="*{memo}">
 			</p>
-			<input type="submit" value="更新">
+			<input type="submit" value="上書き">
 		</form>
-		<form action="#" method="get" th:action="@{/memo/editCancel}">
+		<form action="#" method="get" th:action="@{/memo/edit}">
 			<input type="submit" value="キャンセル">
 		</form>
 	</div>
