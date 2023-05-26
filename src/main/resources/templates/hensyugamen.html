@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>健康管理メモ</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+<!--	タイトル-->
+	<h1 th:text="${?}"></h1>
+<!--	編集-->
+	<div th:object="${?}">
+		<form action="#" method="get" th:action="@{?}">
+			<p>
+				日付: <input type="text" name="?" th:value="*{?}">
+			</p>
+			<p>
+				メモ: <input type="text" name="?" th:value="*{?}">
+			</p>
+			<input type="submit" value="更新">
+		</form>
+	</div>
+</body>
+
+</html>
