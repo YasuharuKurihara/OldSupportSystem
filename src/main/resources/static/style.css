@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+h1 {
+	font-size: 300%;
+	color: #ff0000;
+	background-color: #ffffff;
+}
+
+
+
+.button {
+	display: inline-block;
+	border-radius: 7%;
+	/* 角丸       */
+	font-size: 9pt;
+	/* 文字サイズ */
+	text-align: center;
+	/* 文字位置   */
+	cursor: pointer;
+	/* カーソル   */
+	padding: 7px 10px;
+	/* 余白       */
+	background: rgba(0, 0, 0, 0.67);
+	/* 背景色     */
+	color: #ffffff;
+	/* 文字色     */
+	line-height: 1em;
+	/* 1行の高さ  */
+	transition: .3s;
+	/* なめらか変化 */
+	box-shadow: 6px 6px 5px #666666;
+	/* 影の設定 */
+	border: 2px solid rgba(0, 0, 0, 0.67);
+	/* 枠の指定 */
+	margin: 5px 50px 50px 50px;
+}
+
+.button:hover {
+	box-shadow: none;
+	/* カーソル時の影消去 */
+	color: rgba(0, 0, 0, 0.67);
+	/* 背景色     */
+	background: #ffffff;
+	/* 文字色     */
+}
+
+
+
+/* --- テーブル全体のスタイル指定 --------------- */
+.tableArea {
+	margin-left: 0;
+	/* 左寄せ     */
+	margin-right: auto;
+	/* 自動位置   */
+	border-collapse: separate;
+	/* 境界線結合 */
+	border-spacing: 1px;
+	/* 罫線間余白 */
+	font-size: 15pt;
+	/* 文字サイズ */
+	background: #ffffff;
+	/* テーブル全体の背景色 */
+}
+
+/* --- ヘッダーのスタイル指定 ------------------- */
+.tableArea th {
+	text-align: center;
+	/* 文字位置   */
+	font-weight: bold;
+	/* 太文字     */
+	padding: 0px 0px;
+	/* 余白       */
+	border: 1px #666666 solid;
+	/* 罫線       */
+	background: #ffff1a;
+	/* 背景色     */
+}
+
+/* --- 明細のスタイル指定 ----------------------- */
+.tableArea td {
+	text-align: center;
+	/* 文字位置   */
+	padding: 1px 10px;
+	/* 余白       */
+	border: 1px #666666 solid;
+	/* 罫線       */
+}
+
+/* --- 明細のｎ列スタイル指定 ------------------- */
+.tableArea tr td:nth-of-type(2n) {
+	background: rgba(255, 255, 26, 0.18);
+	/* 背景色     */
+}
+
+
+
+
+
+.radioArea input[type="checkbox"] {
+  width         : 20pt;        /* 大きさ：横 */
+  height        : 20pt;        /* 大きさ：縦 */
+  vertical-align: top;         /* 並び位置   */
+}
+ /* --- チェックボックス直後のlabel --- */
+.radioArea input[type="checkbox"] + label {
+  padding       : 0 4px;                      /* labelの余白 */
+  font-size     : 18pt;                       /* labelの文字サイズ */
+  font-weight   : bold;                       /* 文字太さ   */
+  border        : 3px solid rgba(0, 0, 0, 0); /* labelの枠線 */
+  border-radius : 5px;                        /* labelの角丸 */
+  cursor        : pointer;                    /* カーソル設定 */
+  transition    : .2s;                        /* なめらか変化 */
+}
+ /* --- 選択されたチェックボックス直後のlabel --- */
+.radioArea input[type="checkbox"]:checked + label {
+  border        : 3px solid #67ab23; /* labelの枠線 */
+}
+ /* --- チェックボックス直後のlabelにマウスが乗った --- */
+.radioArea input[type="checkbox"] + label:hover {
+  background    : rgba(103, 171, 35, 0.40);     /* lebelの背景 */
+}
+
+
+.calendar-container {
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #f6f5f4;
+  color: #1a1a1a;
+}
+h1 {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}
+.calendar {
+  padding: 0 30px 30px 30px;
+}
+table {
+  width: 100%;
+}
+th, td {
+  text-align: center;
+  padding: 10px;
+}
+th {
+  font-weight: normal;
+  font-size: 14px;
+}
+td {
+  font-weight: bold;
+}
+.day *:first-child {
+  color: #ff838b;
+}
+.day *:last-child {
+  color: #6fb5ff;
+}
