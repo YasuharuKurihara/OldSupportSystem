@@ -8,7 +8,7 @@ public class OldSupportSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OldSupportSystemApplication.class, args);
-		System.out.println("あああ");
+		System.out.println("iii");
 	}
 
 }
