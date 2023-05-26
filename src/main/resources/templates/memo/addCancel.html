@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+	<h1 th:text="${title}"></h1>
+	<div>
+		<form th:action="@{/addConfirm/{id}(id=${res.id})}">
+			<input type="submit" value="キャンセルする">
+		</form>
+	</div>
+	<div>
+		<form th:action="@{/addConfirm/{id}(id=${res.id})}">
+			<input type="submit" value="キャンセルしない" />
+		</form>
+
+	</div>
+
+</html>

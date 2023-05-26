@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+	<h1 th:text="${title}"></h1>
+	<h2>本当に編集をキャンセルしますか？</h2>
+	<div th:object="${form}">
+		<form action="#" method="get" th:action="@{/memo/editComfirm/__*{id}__/exe}">
+			<input type="submit" value="はい">
+		</form>
+		<form action="#" method="get" th:action="@{/memo/edit}">
+			<input type="submit" value="いいえ">
+		</form>
+	</div>
+</body>
+
+</html>

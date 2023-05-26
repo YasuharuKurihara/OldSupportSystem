@@ -4,7 +4,7 @@
 <head>
 	<title>健康管理メモ</title>
 	<meta charset="utf-8" />
-<!--	css工事中-->
+	<!--	css工事中-->
 	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
@@ -13,11 +13,10 @@
 	<h1 th:text="${title}"></h1>
 	<!--	???は要変更-->
 	<form method="get" action="#" th:action="@{/???}" th:object="${???}">
-		<p>日付：<input type="date" name="time" th:value="*{time}"></p>
-		<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}">エラー</div>
-		<p>メモ：<input type="text" name="memo" th:value="*{memo}"></p>
-		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}">エラー</div>
-		<input type="submit" value="送信">
+		<input type="submit" value="メモ一覧・編集">
+	</form>
+	<form method="get" action="#" th:action="@{/???}" th:object="${???}">
+		<input type="submit" value="メモ追加">
 	</form>
 </body>
 
