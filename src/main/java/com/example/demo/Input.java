@@ -1,24 +1,21 @@
-package com.example.demo.entity;
+package com.example.demo;
 
-public class EntForm {
+import jakarta.validation.constraints.NotBlank;
 
-	private int id;
+public class Input {
+	@NotBlank(message="文字を入力してください")
 	private String memo;
+	
+	
 	private String time;
+	
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getMemo() {
 		return memo;
 	}
 
-	public void setMemo(String memo) {
+	public void getMemo(String memo) {
 		this.memo = memo;
 	}
 
@@ -29,4 +26,6 @@ public class EntForm {
 	public void setTime(String time) {
 		this.time = time;
 	}
+
+	
 }
