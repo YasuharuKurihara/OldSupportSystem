@@ -15,10 +15,10 @@
 	<div th:object="${?}">
 		<form action="#" method="get" th:action="@{?}">
 			<p>
-				日付: <input type="text" name="?" th:value="*{?}">
+				日付: <input type="date" name="time" th:value="*{time}">
 			</p>
 			<p>
-				メモ: <input type="text" name="?" th:value="*{?}">
+				メモ: <input type="text" name="memo" th:value="*{memo}">
 			</p>
 			<input type="submit" value="更新">
 		</form>
