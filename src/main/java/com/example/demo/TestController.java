@@ -11,7 +11,7 @@ public class TestController {
 
     @GetMapping(path = "/test")
     public String getTest(HttpServletRequest request) {
-    	//commit test
+    	//commitTest
         return "Hello World!";
     }
 	
