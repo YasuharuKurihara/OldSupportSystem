@@ -1,7 +1,5 @@
-CREATE TABLE memo(
-	id INT NOT NULL AUTO_INCREMENT,
-	Month INT,
-	Date INT,
+CREATE TABLE form(
+	time yyyymmdd,
 	memo Text,
-	PRIMARY KEY(id)
+	
 );
