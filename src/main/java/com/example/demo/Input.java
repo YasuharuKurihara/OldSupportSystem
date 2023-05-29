@@ -3,7 +3,7 @@ package com.example.demo;
 import jakarta.validation.constraints.NotBlank;
 
 public class Input {
-	@NotBlank(message="文字を入力してください")
+
 	private String memo;
 	
 	@NotBlank(message="文字を入力してください")
@@ -15,7 +15,7 @@ public class Input {
 		return memo;
 	}
 
-	public void getMemo(String memo) {
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
 

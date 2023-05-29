@@ -20,11 +20,11 @@ public class MemoDao {
 	}
 
 	public void insertDb(EntForm entform) {
-		db.update("INSERT INTO memo (memo,time) VALUES(?,?)", entform.getMemo(), entform.getTime());
+		db.update("INSERT INTO form (memo,time) VALUES(?,?)", entform.getMemo(), entform.getTime());
 	}
 
 	public List<EntForm> searchDb() {
-		String sql = "SELECT * FROM memo";
+		String sql = "SELECT * FROM form";
 
 		//データベースから取り出したデータをresultDB1に入れる
 		List<Map<String, Object>> resultDb1 = db.queryForList(sql);
@@ -63,7 +63,7 @@ public class MemoDao {
 		//コンソールに表示
 		System.out.println("編集画面を出します");
 		//データベースから目的の1件を取り出して、そのままresultDB1に入れる
-		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM memo where id=?", id);
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM form where id=?", id);
 		//画面に表示しやすい形のList(resultDB2)を用意
 		List<EntForm> resultDb2 = new ArrayList<EntForm>();
 
@@ -89,7 +89,7 @@ public class MemoDao {
 		//コンソールに表示
 		System.out.println("編集の実行");
 		//UPDATEを実行
-		db.update("UPDATE memo SET memo = ? , time = ?  WHERE id = ?", entform.getMemo(), entform.getTime(), id);
+		db.update("UPDATE form SET form = ? , time = ?  WHERE id = ?", entform.getMemo(), entform.getTime(), id);
 	}
 
 }
