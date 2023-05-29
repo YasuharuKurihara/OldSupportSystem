@@ -1,7 +1,7 @@
-CREATE TABLE memo(
-
-    time Yyyymmdd
-	id INT NOT NULL AUTO_INCREMENT,
-	memo VARCHAR(100) NOT NULL,
-	PRIMARY KEY(id)
-	);
+CREATE TABLE form
+(
+   time VARCHAR(100) NOT NULL,
+   id INT NOT NULL AUTO_INCREMENT,
+   memo VARCHAR (100) NOT NULL,
+   PRIMARY KEY (id)
+);
