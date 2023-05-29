@@ -17,7 +17,7 @@ public class MemoController {
 	@RequestMapping("/home")
 	public String home(Model model) {
 		model.addAttribute("title1", "忘れ物防止メモ帳");
-		model.addAttribute("title2", "体調-超-管理");
+		model.addAttribute("title2", "体調管理");
 		return "home";
 	}
 	
@@ -29,7 +29,7 @@ public class MemoController {
 	}
 	
 	//メモ帳機能にアクセスされたとき
-	@RequestMapping("/memo/view")
+	@RequestMapping("/view")
 	public String view(Model model, Input input) {
 		//名前が決まれば変更
 		
@@ -45,14 +45,13 @@ public class MemoController {
 	}
 	
 	
-	@RequestMapping("/memo/add")
+	@RequestMapping("/add")
 	public String add(Model model,Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
 	
-	@RequestMapping("/memo/addConfirm")
+	@RequestMapping("/addConfirm")
 	public String addConfirm(@Validated Input input, BindingResult result,Model model) {
 		
 		if(result.hasErrors()) {
@@ -62,5 +61,8 @@ public class MemoController {
 		return "memo/addConfirm";
 	}
 	
-	
+	@RequestMapping("/delete")
+	public String destory(Model model,Input input) {
+		return "/memo/add";
+	}
 }
