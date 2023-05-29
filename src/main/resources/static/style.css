@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-h1 {
-	font-size: 300%;
-	color: #ff0000;
-	background-color: #ffffff;
-}
-
-
-
 .button {
 	display: inline-block;
 	border-radius: 7%;
