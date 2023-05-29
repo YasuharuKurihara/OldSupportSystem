@@ -40,6 +40,8 @@ public class MemoDao {
 
 			//id、nameのデータをentformdbに移す
 			entformdb.setId((int) result1.get("id"));
+			entformdb.setMemo((String) result1.get("memo"));
+			entformdb.setTime((String) result1.get("time"));
 
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
