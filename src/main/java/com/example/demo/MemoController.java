@@ -1,5 +1,4 @@
 package com.example.demo;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dao.MemoDao;
 import com.example.demo.entity.EntForm;
-
 @Controller
 public class MemoController {
 	
