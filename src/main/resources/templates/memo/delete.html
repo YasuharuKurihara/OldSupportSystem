@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+	<h1 th:text="${title}"></h1>
+	<div th:object="${form}">
+		<form action="#" method="get" th:action="@{/deleteConfirm/__*{id}__/exe}">
+				<input type="hidden" name="id" th:value="*{id}"> 
+			<p>本当に削除しますか</p>
+			<input type="submit" value="削除">
+		</form>
+		<form action="#" method="get" th:action="@{/view}">
+			<input type="submit" value="キャンセル">
+		</form>
+	</div>
+</body>
+
+</html>
