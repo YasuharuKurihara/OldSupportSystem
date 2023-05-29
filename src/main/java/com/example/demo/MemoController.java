@@ -45,14 +45,14 @@ public class MemoController {
 	}
 	
 	
-	@RequestMapping("/memo/add")
+	@RequestMapping("/add")
 	public String add(Model model,Input input) {
 		model.addAttribute("title", "メモ 新規作成");
 		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
 	
-	@RequestMapping("/memo/addConfirm")
+	@RequestMapping("/addConfirm")
 	public String addConfirm(@Validated Input input, BindingResult result,Model model) {
 		
 		if(result.hasErrors()) {
