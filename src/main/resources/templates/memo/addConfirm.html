@@ -26,6 +26,7 @@
 		日付：<span th:text="*{time}"></span>
 		メモ：<span th:text="*{memo}"></span>
 		<form action="#" method="get" th:action="@{/memo/view}">
+
 			<input type="hidden" name="time" th:value="*{time}">
 			<input type="hidden" name="memo" th:value="*{memo}">
 			<input type="submit" value="追加">

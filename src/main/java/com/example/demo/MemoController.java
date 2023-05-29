@@ -48,6 +48,7 @@ public class MemoController {
 	@RequestMapping("/memo/add")
 	public String add(Model model,Input input) {
 		model.addAttribute("title", "メモ 新規作成");
+		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
 	
