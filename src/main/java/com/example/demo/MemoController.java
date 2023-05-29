@@ -32,12 +32,12 @@ public class MemoController {
 	@RequestMapping("/memo/view")
 	public String view(Model model, Input input) {
 		//名前が決まれば変更
-		
-		EntForm entForm = new EntForm();
-		entForm.setMemo(input.getMemo());
-		entForm.setTime(input.getTime());
-		memodao.insertDb(entForm);
-		
+//		
+//		EntForm entForm = new EntForm();
+//		entForm.setMemo(input.getMemo());
+//		entForm.setTime(input.getTime());
+//		memodao.insertDb(entForm);
+//		
 		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
@@ -61,5 +61,10 @@ public class MemoController {
 		return "memo/addConfirm";
 	}
 	
+	@RequestMapping("/memo/addCancel")
+	public String addCancel(Model model, Input input) {
+		model.addAttribute("title", "メモキャンセル");
+		return "/memo/addCancel";
+	}
 	
 }
