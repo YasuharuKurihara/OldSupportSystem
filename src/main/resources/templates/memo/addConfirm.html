@@ -7,6 +7,17 @@
 	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
+<!--controller参考-->
+<!--@RequestMapping("/addConfirm")-->
+<!--	public String addConfirm(@Validated Input input, BindingResult result, Model model) {-->
+<!--		if (result.hasErrors()) {-->
+<!--			model.addAttribute("title", "入力ページ");-->
+<!--			return "memo/add";-->
+<!--		}-->
+<!--		model.addAttribute("title", "確認ページ");-->
+<!--		return "memo/addConfirm";-->
+<!--	}-->
+
 <body>
 	<!--	タイトル-->
 	<h1 th:text="${title}"></h1>
