@@ -11,17 +11,15 @@
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
 		<h2>この内容で上書きしてよろしいですか？</h2>
+		<p th:text="*{name}"></p>
 		<form action="#" method="get" th:action="@{/memo/view}">
-			<p>
-				番号:<span th:text="*{id}"></span> <input type="hidden" name="id" th:value="*{id}">
-			</p>
-			<p>
-				<span th:text="*{name}"></span>
-				メモ内容: <input type="hidden" name="memo" th:value="*{memo}">
-			</p>
-			<input type="submit" value="更新">
+			<input type="hidden" name="id" th:value="*{id}">
+			<input type="hidden" name="memo" th:value="*{memo}">
+			<input type="submit" value="上書き">
 		</form>
-		<form action="#" method="get" th:action="@{/memo/editCancel}">
+		<form action="#" method="get" th:action="@{/memo/edit}">
+			<input type="hidden" name="id" th:value="*{id}">
+			<input type="hidden" name="memo" th:value="*{memo}">
 			<input type="submit" value="キャンセル">
 		</form>
 	</div>
