@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dao.MemoDao;
@@ -48,7 +49,6 @@ public class MemoController {
 	@RequestMapping("/memo/add")
 	public String add(Model model,Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
 	
@@ -56,10 +56,74 @@ public class MemoController {
 	public String addConfirm(@Validated Input input, BindingResult result,Model model) {
 		
 		if(result.hasErrors()) {
-			model.addAttribute("title", "メモ 新規作成");
+			model.addAttribute("title", "入力内容　確認画面");
 			return "memo/add";
 		}
 		
 		return "memo/addConfirm";
 	}
+	
+	@RequestMapping("/memo/addCancel")
+	public String addCancel(Model model,Input input) {
+		model.addAttribute("title", "メモ 新規作成");
+		return "/memo/add";
+	}
+	
+	@RequestMapping("/del/{id}")
+	public String del(@PathVariable Long id, Model model) {
+		model.addAttribute("title", "メモ 削除確認画面");
+		return "/memo/delete";
+	}
+	
+	@RequestMapping("/deleteConfirm/{id}")
+	public String destory(@PathVariable Long id, Model model) {
+		memodao.deleteDb(id);
+		return "redirect:/view";
+	}
+	
+	//更新画面の表示(SELECT)
+	@RequestMapping("/edit/{id}")
+	public String editView(@PathVariable Long id, Model model) {
+
+		//DBからデータを1件取ってくる(リストの形)
+		List<EntForm> list = memodao.selectOne(id);
+
+		//リストから、オブジェクトだけをピックアップ
+		EntForm entformdb = list.get(0);
+
+		//スタンバイしているViewに向かって、データを投げる
+		model.addAttribute("form", entformdb);
+		model.addAttribute("title", "編集画面");
+		return "memo/edit";
+	}
+	
+	@RequestMapping("/editCancel/{id}/exe")
+	public String editCancel(Model model,Input input) {
+		model.addAttribute("title", "メモ 新規作成");
+		return "/memo/editCancel";
+	}
+	
+	//要修正箇所　＊SpringBootの実行エラーが起こる
+//	@RequestMapping("/editComfirm/{id}/exe")
+//	public String editConfirm(@PathVariable Long id, Model model, Input input) {
+//		model.addAttribute("title", "編集確認画面");
+//		//一覧画面へリダイレクト
+//		return "memo/editComfirm";
+//	}
+	
+	//更新処理(UPDATE)
+	@RequestMapping("/editComfirm/{id}/exe")
+	public String editExe(@PathVariable Long id, Model model, Input input) {
+		//フォームの値をエンティティに入れ直し
+		EntForm entform = new EntForm();
+		System.out.println(input.getMemo());//取得できているかの確認
+		System.out.println(input.getTime());
+		entform.setMemo(input.getMemo());
+		entform.setTime(input.getTime());
+		//更新の実行
+		memodao.updateDb(id,entform);
+		//一覧画面へリダイレクト
+		return "redirect:/view";
+	}
+	
 }
