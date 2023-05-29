@@ -1,6 +1,6 @@
 CREATE TABLE form(
 
-	time YYYY-MM-DD,
+	time Yyyymmdd
 	id INT NOT NULL AUTO_INCREMENT,
 	memo VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id)
