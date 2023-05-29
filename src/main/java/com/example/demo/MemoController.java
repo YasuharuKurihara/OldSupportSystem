@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,11 +23,24 @@ public class MemoController {
 		return "home";
 	}
 	
+	private final MemoDao memodao;
+	
+	@Autowired
+	public MemoController(MemoDao memodao) {
+		this.memodao = memodao;
+	}
+	
 	//メモ帳機能にアクセスされたとき
 	@RequestMapping("/memo/view")
-	public String view(Model model) {
+	public String view(Model model, Input input) {
 		//名前が決まれば変更
-		List<EntForm> list = MemoDao.searchDb();
+		
+		EntForm entForm = new EntForm();
+		entForm.setMemo(input.getMemo());
+		entForm.setTime(input.getTime());
+		memodao.insertDb(entForm);
+		
+		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
 		return "memo/view";
@@ -41,6 +55,7 @@ public class MemoController {
 	
 	@RequestMapping("/memo/addConfirm")
 	public String addConfirm(Model model,@Validated Input input, BindingResult result) {
+		
 		if(result.hasErrors()) {
 			model.addAttribute("title", "メモ　新規作成");
 			return "memo/add";
