@@ -23,18 +23,16 @@
 	<h1 th:text="${title}"></h1>
 	<div th:object="${input}">
 		<h2>この内容でよろしいですか</h2>
+		日付：<span th:text="*{time}"></span>
+		メモ：<span th:text="*{memo}"></span>
 		<form action="#" method="get" th:action="@{/memo/view}">
-			<p>
-				<span th:text="*{time}"></span>
-				日付: <input type="hidden" name="time" th:value="*{time}">
-			</p>
-			<p>
-				<span th:text="*{memo}"></span>
-				メモ: <input type="hidden" name="memo" th:value="*{memo}">
-			</p>
+			<input type="hidden" name="time" th:value="*{time}">
+			<input type="hidden" name="memo" th:value="*{memo}">
 			<input type="submit" value="追加">
 		</form>
 		<form action="#" method="get" th:action="@{/memo/addCancel}">
+			<input type="hidden" name="time" th:value="*{time}">
+			<input type="hidden" name="memo" th:value="*{memo}">
 			<input type="submit" value="キャンセル">
 		</form>
 	</div>
