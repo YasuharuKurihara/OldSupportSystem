@@ -17,7 +17,7 @@ public class MemoController {
 	@RequestMapping("/home")
 	public String home(Model model , Input input) {
 		model.addAttribute("title1", "忘れ物防止メモ帳");
-		model.addAttribute("title2", "体調-超-管理");
+		model.addAttribute("title2", "体調管理");
 		return "home";
 	}
 	
