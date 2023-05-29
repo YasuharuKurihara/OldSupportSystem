@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dao.MemoDao;
@@ -16,8 +17,8 @@ public class MemoController {
 	//ホーム画面にアクセスされたとき
 	@RequestMapping("/home")
 	public String home(Model model) {
-		model.addAttribute("title1", "忘れ物防止メモ帳");
-		model.addAttribute("title2", "体調-超-管理");
+		model.addAttribute("title", "忘れ物防止メモ帳");
+//		model.addAttribute("title2", "体調-超-管理");
 		return "home";
 	}
 	
@@ -29,7 +30,7 @@ public class MemoController {
 	}
 	
 	//メモ帳機能にアクセスされたとき
-	@RequestMapping("/memo/view")
+	@RequestMapping("/view")
 	public String view(Model model, Input input) {
 		//名前が決まれば変更
 		
@@ -45,13 +46,13 @@ public class MemoController {
 	}
 	
 	
-	@RequestMapping("/memo/add")
+	@RequestMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
 	
-	@RequestMapping("/memo/addConfirm")
+	@RequestMapping("/addConfirm")
 	public String addConfirm(Model model,@Validated Input input, BindingResult result) {
 		
 		if(result.hasErrors()) {
@@ -61,5 +62,15 @@ public class MemoController {
 		return "memo/addConfirm";
 	}
 	
+	@RequestMapping("/delete/{id}")
+	public String delconfirm(@PathVariable Long id) {
+		memodao.deleteDb(id);
+		return "redirect:/view";
+	}
 	
+	@RequestMapping("/deleteConfirm/{id}")
+	public String destory(@PathVariable Long id) {
+		memodao.deleteDb(id);
+		return "redirect:/view";
+	}
 }
