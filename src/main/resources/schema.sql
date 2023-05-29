@@ -1,5 +1,4 @@
 CREATE TABLE form(
 	time yyyymmdd,
-	memo Text,
-	
+	comment VARCHAR(100) NOT NULL,,
 );

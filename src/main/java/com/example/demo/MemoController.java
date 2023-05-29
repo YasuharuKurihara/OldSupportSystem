@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.dao.MemoDao;
 import com.example.demo.entity.EntForm;
 
 @Controller
@@ -22,7 +23,7 @@ public class MemoController {
 	@RequestMapping("/memo/view")
 	public String view(Model model) {
 
-		List<EntForm> list = memodao.searchDb();
+		List<EntForm> list = MemoDao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
 		return "view";
