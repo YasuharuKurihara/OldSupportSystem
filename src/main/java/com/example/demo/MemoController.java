@@ -17,7 +17,7 @@ public class MemoController {
 	@RequestMapping("/home")
 	public String home(Model model) {
 		model.addAttribute("title1", "忘れ物防止メモ帳");
-		model.addAttribute("title2", "体調-超-管理");
+		model.addAttribute("title2", "体調管理");
 		return "home";
 	}
 	
@@ -29,7 +29,7 @@ public class MemoController {
 	}
 	
 	//メモ帳機能にアクセスされたとき
-	@RequestMapping("/memo/view")
+	@RequestMapping("/view")
 	public String view(Model model, Input input) {
 		//名前が決まれば変更
 		
