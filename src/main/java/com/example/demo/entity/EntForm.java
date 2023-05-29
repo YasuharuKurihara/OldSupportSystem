@@ -27,6 +27,6 @@ public class EntForm {
 	}
 
 	public void setTime(String time) {
-		this.time = time;
+		
 	}
 }
