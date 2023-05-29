@@ -46,8 +46,13 @@ public class MemoController {
 	}
 	
 	
+<<<<<<< HEAD
 	@RequestMapping("/add")
 	public String add(Model model) {
+=======
+	@RequestMapping("/memo/add")
+	public String add(Model model,Input input) {
+>>>>>>> 0516985c1a4ec57a41d6ae1864da31238540049c
 		model.addAttribute("title", "メモ　新規作成");
 		return "/memo/add";
 	}
