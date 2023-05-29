@@ -11,7 +11,7 @@
 <body>
 	<!--	?は要変更-->
 	<!--	タイトル-->
-	<h1 th:text="${???}"></h1>
+	<h1 th:text="${title}"></h1>
 
 	<table class="tableArea" id="makeImg">
 		<tr>
@@ -21,7 +21,7 @@
 		</tr>
 		<tr th:each="res : ${dbList}">
 			<td th:text="${res.id}">1</td>
-			<td th:text="${res.date}">日付</td>
+			<td th:text="${res.time}">日付</td>
 			<td th:text="${res.memo}">メモ</td>
 			<td>
 				<form th:action="@{/edit/{id}(id=${res.id})}">
@@ -36,7 +36,7 @@
 		</tr>
 	</table>
 	<!--	入力だけのページに戻る-->
-	<p><a href="/add" th:href="@{/add}" class="button">入力画面へ</a></p>
+	<p><a href="/memo/add" th:href="@{/memo/add}" class="button">入力画面へ</a></p>
 </body>
 
 </html>
