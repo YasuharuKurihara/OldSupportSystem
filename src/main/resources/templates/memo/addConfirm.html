@@ -8,13 +8,18 @@
 </head>
 
 <body>
-<!--	タイトル-->
-	<h1 th:text="${}"></h1>
-	<div th:object="${}">
+	<!--	タイトル-->
+	<h1 th:text="${title}"></h1>
+	<div th:object="${input}">
 		<h2>この内容でよろしいですか</h2>
 		<form action="#" method="get" th:action="@{/memo/view}">
 			<p>
-				日付:<span th:text="*{id}"></span> <input type="hidden" name="id" th:value="*{id}">
+				番号:<span th:text="*{id}"></span>
+				<input type="hidden" name="id" th:value="*{id}">
+			</p>
+			<p>
+				<span th:text="*{time}"></span>
+				日付: <input type="hidden" name="time" th:value="*{time}">
 			</p>
 			<p>
 				<span th:text="*{memo}"></span>

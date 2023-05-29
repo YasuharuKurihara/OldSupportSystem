@@ -12,10 +12,10 @@
 	<!--	${title}はcontrollerから-->
 	<h1 th:text="${title}"></h1>
 	<!--	???は要変更-->
-	<form method="get" action="#" th:action="@{/???}" th:object="${???}">
+	<form method="get" action="#" th:action="@{/view}">
 		<input type="submit" value="メモ一覧・編集">
 	</form>
-	<form method="get" action="#" th:action="@{/???}" th:object="${???}">
+	<form method="get" action="#" th:action="@{/add}">
 		<input type="submit" value="メモ追加">
 	</form>
 </body>
