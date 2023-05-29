@@ -11,14 +11,15 @@
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
 		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
-				<input type="hidden" name="id" th:value="*{id}"> 
-			<p>
-				メモ内容: <input type="text" name="memo" th:value="*{memo}">
-			</p>
+			<input type="hidden" name="id" th:value="*{id}">
+			<p>日付：<input type="date" name="time" th:value="*{time}"></p>
+			<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}">エラー</div>
+			<p>メモ内容: <input type="text" name="memo" th:value="*{memo}"></p>
+			<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
 			<input type="submit" value="更新">
 		</form>
 		<form action="#" method="get" th:action="@{/editCancel/__*{id}__/exe}">
-			<input type="text" value="キャンセル">//入力内容を保存しておきたい
+			<input type="text" value="キャンセル">
 		</form>
 	</div>
 </body>
