@@ -14,10 +14,6 @@
 		<h2>この内容でよろしいですか</h2>
 		<form action="#" method="get" th:action="@{/memo/view}">
 			<p>
-				番号:<span th:text="*{id}"></span>
-				<input type="hidden" name="id" th:value="*{id}">
-			</p>
-			<p>
 				<span th:text="*{time}"></span>
 				日付: <input type="hidden" name="time" th:value="*{time}">
 			</p>
