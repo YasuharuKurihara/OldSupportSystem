@@ -4,12 +4,12 @@ import jakarta.validation.constraints.NotBlank;
 
 public class Input {
 
-	private String memo;
-	@NotBlank(message="文字を入力してください")
-	
-	private String time;
-	
+	@NotBlank(message = "文字を入力してください")
 
+	private String memo;
+	@NotBlank(message = "文字を入力してください")
+
+	private String time;
 
 	public String getMemo() {
 		return memo;
@@ -27,5 +27,4 @@ public class Input {
 		this.time = time;
 	}
 
-	
 }

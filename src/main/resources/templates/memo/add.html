@@ -18,9 +18,9 @@
 
 	<form method="get" action="#" th:action="@{/memo/addConfirm}" th:object="${input}">
 		<p>日付：<input type="date" name="time" th:value="*{time}"></p>
-		<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}">エラー</div>
+		<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}">エラー</div>
 		<p>メモ：<input type="text" name="memo" th:value="*{memo}"></p>
-		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}">エラー</div>
+		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
 		<input type="submit" value="送信">
 	</form>
 </body>
