@@ -9,9 +9,9 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<h2>本当に編集をキャンセルしますか？</h2>
+	<h2>編集をキャンセルしますか？</h2>
 	<div th:object="${form}">
-		<form action="#" method="get" th:action="@{/memo/editComfirm/__*{id}__/exe}">
+		<form action="#" method="get" th:action="@{/memo/view}">
 			<input type="submit" value="はい">
 		</form>
 		<form action="#" method="get" th:action="@{/memo/edit}">
