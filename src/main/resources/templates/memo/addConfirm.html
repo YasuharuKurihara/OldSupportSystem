@@ -7,16 +7,23 @@
 	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
+<!--controller参考-->
+<!--@RequestMapping("/addConfirm")-->
+<!--	public String addConfirm(@Validated Input input, BindingResult result, Model model) {-->
+<!--		if (result.hasErrors()) {-->
+<!--			model.addAttribute("title", "入力ページ");-->
+<!--			return "memo/add";-->
+<!--		}-->
+<!--		model.addAttribute("title", "確認ページ");-->
+<!--		return "memo/addConfirm";-->
+<!--	}-->
+
 <body>
 	<!--	タイトル-->
 	<h1 th:text="${title}"></h1>
 	<div th:object="${input}">
 		<h2>この内容でよろしいですか</h2>
 		<form action="#" method="get" th:action="@{/memo/view}">
-			<p>
-				番号:<span th:text="*{id}"></span>
-				<input type="hidden" name="id" th:value="*{id}">
-			</p>
 			<p>
 				<span th:text="*{time}"></span>
 				日付: <input type="hidden" name="time" th:value="*{time}">
