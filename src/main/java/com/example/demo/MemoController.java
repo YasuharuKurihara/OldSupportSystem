@@ -88,7 +88,7 @@ public class MemoController {
 	}
 
 	//更新画面の表示(SELECT)
-	@RequestMapping("/edit/{id}")
+	@RequestMapping("memo/edit/{id}")
 	public String editView(@PathVariable Long id, Model model) {
 
 		//DBからデータを1件取ってくる(リストの形)
