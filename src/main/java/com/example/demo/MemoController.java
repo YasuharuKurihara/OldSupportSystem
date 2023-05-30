@@ -34,8 +34,6 @@ public class MemoController {
 	//メモ帳機能にアクセスされたとき
 	@RequestMapping("/memo/view")
 	public String view(Input input, Model model) {
-
-
 		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
@@ -58,10 +56,9 @@ public class MemoController {
 
 		model.addAttribute("title", "入力内容　確認");
 		EntForm entForm = new EntForm();
-		
-			entForm.setMemo(input.getMemo());
-			entForm.setTime(input.getTime());
-		
+
+		entForm.setMemo(input.getMemo());
+		entForm.setTime(input.getTime());
 
 		memodao.insertDb(entForm);
 		return "memo/addConfirm";
@@ -76,9 +73,8 @@ public class MemoController {
 	@RequestMapping("/del/{id}")
 	public String del(@PathVariable Long id, Model model) {
 
-		model.addAttribute("title", "メモ 削除確認");
-		return "memo/delete";
-
+		model.addAttribute("title", "メモ 削除確認画面");
+		return "/memo/delete";
 	}
 
 	@RequestMapping("/deleteConfirm/{id}")
@@ -142,7 +138,7 @@ public class MemoController {
 		//更新の実行
 		memodao.updateDb(id, entform);
 		//一覧画面へリダイレクト
-		return "redirect:/view";
+		return "redirect:/memo/view";
 	}
 
 }
