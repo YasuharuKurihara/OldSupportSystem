@@ -10,7 +10,7 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
-		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__}">
+		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
 			<input type="hidden" name="id" th:value="*{id}">
 			<p>日付：<input type="date" name="time" th:value="*{time}"></p>
 			<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}">エラー</div>
