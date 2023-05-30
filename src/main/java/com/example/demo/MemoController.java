@@ -31,7 +31,7 @@ public class MemoController {
 	
 	//メモ帳機能にアクセスされたとき
 	@RequestMapping("/memo/view")
-	public String view(@Validated Input input, Model model,BindingResult result) {
+	public String view(Input input, Model model) {
 		//名前が決まれば変更
 		
 		
