@@ -89,7 +89,7 @@ public class MemoController {
 	}
 
 	//更新画面の表示(SELECT)
-	@RequestMapping("/memo/edit/{id}")
+	@RequestMapping("/edit/{id}")
 	public String editView(@PathVariable Long id, Model model) {
 
 		//DBからデータを1件取ってくる(リストの形)
@@ -104,8 +104,15 @@ public class MemoController {
 		return "memo/edit";
 	}
 
-	@RequestMapping("/editCancel/{id}/exe")
+	
+	@RequestMapping("/editCancel/{id}/")
 	public String editCancel(Model model, Input input) {
+		model.addAttribute("title", "編集キャンセル確認");
+		return "memo/editCancel";
+	}
+	
+	@RequestMapping("/editCancel/{id}/exe")
+	public String editCancelExe(Model model, Input input) {
 		model.addAttribute("title", "編集キャンセル確認");
 		return "memo/editCancel";
 	}
