@@ -15,12 +15,14 @@
 	<h1 th:text="${title2}"></h1>
 
 	<!--	???は要変更-->
+	<div>
 	<form method="get" action="#" th:action="@{/memo/view}">
-		<input type="submit" value="メモ一覧・編集">
+		<input type="submit" value="メモ一覧・編集" class="button">
 	</form>
 	<form method="get" action="#" th:action="@{memo/add}">
-		<input type="submit" value="メモ追加">
+		<input type="submit" value="メモ追加" class="button">
 	</form>
+	</div>
 </body>
 
 </html>
