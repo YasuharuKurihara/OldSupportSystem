@@ -33,17 +33,9 @@ public class MemoController {
 
 	//メモ帳機能にアクセスされたとき
 	@RequestMapping("/memo/view")
-	public String view(@Validated Input input, Model model, BindingResult result) {
+	public String view(Input input, Model model) {
 
-		EntForm entForm = new EntForm();
 
-		//変数に値が入力されていれば
-		if (input.getMemo() != null && input.getTime() != null) {
-			entForm.setMemo(input.getMemo());
-			entForm.setTime(input.getTime());
-		}
-
-		memodao.insertDb(entForm);
 		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
@@ -66,6 +58,13 @@ public class MemoController {
 
 		model.addAttribute("title", "入力内容　確認");
 
+		EntForm entForm = new EntForm();
+		
+			entForm.setMemo(input.getMemo());
+			entForm.setTime(input.getTime());
+		
+
+		memodao.insertDb(entForm);
 		return "memo/addConfirm";
 	}
 
