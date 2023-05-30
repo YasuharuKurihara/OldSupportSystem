@@ -75,8 +75,10 @@ public class MemoController {
 	    model.addAttribute("title", "メモ 削除確認画面");  
 	    List<EntForm> list = memodao.selectOne(id);
 	    if (list != null && !list.isEmpty()) {
+	    	memodao.deleteDb(id);
 	        model.addAttribute("memo", list.get(0));
 	    }
+	    memodao.deleteDb(id);
 	    return "/memo/delete";
 	}
 

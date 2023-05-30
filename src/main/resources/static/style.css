@@ -8,15 +8,17 @@ div {
 	display: inline-block;
 	border-radius: 3%;
 	/* 角丸       */
-	font-size: 18pt;
+	font-size: xx-large;
 	/* 文字サイズ */
 	text-align: center;
 	/* 文字位置   */
 	cursor: pointer;
 	/* カーソル   */
+	font-weight: bold;
+	/* 太文字     */
 	padding: 13px 16px;
 	/* 余白       */
-	background: #000000;
+	background: rgb(0, 128, 0);
 	/* 背景色     */
 	color: #ffffff;
 	/* 文字色     */
@@ -63,10 +65,14 @@ div {
 	/* 太文字     */
 	padding: 0px 0px;
 	/* 余白       */
-	border: 1px #666666 solid;
+	border: 1px rgb(255, 255, 255) solid;
 	/* 罫線       */
-	background: rgba(0, 0, 0, 0.36);
+	background: rgb(0, 128, 0);
 	/* 背景色     */
+	color:#ffffff;
+	/*文字色*/
+	font-size:x-large;
+	/*文字サイズ*/
 }
 
 /* --- 明細のスタイル指定 ----------------------- */
@@ -77,6 +83,7 @@ div {
 	/* 余白       */
 	border: 1px #666666 solid;
 	/* 罫線       */
+	font-size:xx-large;
 }
 
 /* --- 明細のｎ行スタイル指定 ------------------- */
@@ -141,8 +148,12 @@ h1 {
 	height: 80px;
 	line-height: 80px;
 	text-align: center;
-	font-size: 24px;
+	font-size: 50px;
 	margin: 0;
+}
+
+p{
+	font-size:30pt;
 }
 
 .calendar {
@@ -175,3 +186,15 @@ td {
 .day *:last-child {
 	color: #6fb5ff;
 }
+
+.moji{
+	width:300px;
+	height:50px;
+	font-size:x-large;
+}
+
+.error{
+	font-size:x-large;
+}
+
+

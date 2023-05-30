@@ -24,7 +24,7 @@
 	<div th:object="${input}">
 		<h2>この内容でよろしいですか</h2>
 		<p>
-		日付：<span th:text="*{time}"></span>
+		日付：<span th:text="*{time}"></span><br>
 		メモ：<span th:text="*{memo}"></span>
 		</p>
 		<form action="#" method="get" th:action="@{/memo/view}">

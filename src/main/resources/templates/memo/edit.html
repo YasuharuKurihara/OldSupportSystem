@@ -13,14 +13,14 @@
 
 		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
 			<input type="hidden" name="id" th:value="*{id}">
-			<p>日付：<input type="date" name="time" th:value="*{time}"></p>
+			<p>日付：<input type="date" name="time" th:value="*{time}" class="moji"></p>
 			<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}">エラー</div>
-			<p>メモ内容: <input type="text" name="memo" th:value="*{memo}"></p>
+			<p>メモ内容: <input type="text" name="memo" th:value="*{memo}" class="moji"></p>
 			<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
-			<input type="submit" value="更新">
+			<input type="submit" value="更新" class="button">
 		</form>
 		<form action="#" method="get" th:action="@{/memo/view}">
-			<input type="submit" value="キャンセル">
+			<input type="submit" value="キャンセル" class="button">
 		</form>
 	</div>
 </body>

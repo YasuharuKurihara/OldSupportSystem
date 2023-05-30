@@ -4,28 +4,24 @@
 <head>
 	<title>Hello</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
-<!--controller参考-->
-<!--@RequestMapping("/add")-->
-<!--	public String add(Model model, Input input) {-->
-<!--		model.addAttribute("title", "サンプルフォーム");-->
-<!--		return "memo/add";-->
-<!--	}-->
+
 <body>
 	<h1 th:text="${title}"></h1>
-<!--	工事中-->
-
+	<div>
 	<form method="get" action="#" th:action="@{/memo/addConfirm}" th:object="${input}">
-		<p>日付：<input type="date" name="time" th:value="*{time}"></p>
-		<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}">エラー</div>
-		<p>メモ：<input type="text" name="memo" th:value="*{memo}"></p>
-		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
-		<input type="submit" value="送信">
+		<p>日付：<input type="date" name="time" th:value="*{time}" class="moji"></p>
+		<div th:if="${#fields.hasErrors('time')}" th:errors="*{time}" th:text="${message}" class="error">エラー</div>
+		<p>メモ：<input type="text" name="memo" th:value="*{memo}" class="moji"></p>
+		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}" class="error">エラー</div>
+		<input type="submit" value="送信" class="button">
 	</form>
 	<form method="get" action="#" th:action="@{/memo/addCancel}" th:object="${input}">
-		<input type="submit" value="キャンセル">
+		<input type="submit" value="キャンセル" class="button">
 	</form>
+	</div>
 </body>
 
 </html>
