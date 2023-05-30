@@ -23,6 +23,9 @@
 		<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
 		<input type="submit" value="送信">
 	</form>
+	<form method="get" action="#" th:action="@{/memo/addCancel}" th:object="${input}">
+		<input type="submit" value="キャンセル">
+	</form>
 </body>
 
 </html>

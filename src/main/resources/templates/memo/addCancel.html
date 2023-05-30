@@ -9,13 +9,19 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
+	<div th:object="${input}">
+		<h2>この内容を取り消しますか
+		</h2>
+		日付：<span th:text="*{time}"></span>
+		メモ：<span th:text="*{memo}"></span>
+	</div>
 	<div>
-		<form th:action="@{/addConfirm/{id}(id=${res.id})}">
+		<form th:action="@{/home}">
 			<input type="submit" value="キャンセルする">
 		</form>
 	</div>
 	<div>
-		<form th:action="@{/addConfirm/{id}(id=${res.id})}">
+		<form th:action="@{/memo/add}">
 			<input type="submit" value="キャンセルしない" />
 		</form>
 
