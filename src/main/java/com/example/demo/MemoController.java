@@ -72,6 +72,7 @@ public class MemoController {
 	@RequestMapping("/del/{id}")
 	public String del(@PathVariable Long id, Model model) {
 		model.addAttribute("title", "メモ 削除確認画面");
+		memodao.deleteDb(id);
 		return "/memo/delete";
 	}
 	

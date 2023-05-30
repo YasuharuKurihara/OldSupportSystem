@@ -24,7 +24,7 @@
 			<td th:text="${res.time}">日付</td>
 			<td th:text="${res.memo}">メモ</td>
 			<td>
-				<form th:action="@{memo/edit/{id}(id=${res.id})}">
+				<form th:action="@{/edit/{id}(id=${res.id})}">
 					<input type="submit" value="編集">
 				</form>
 			</td>
