@@ -56,7 +56,7 @@ public class MemoDao {
 		//コンソールに表示
 		System.out.println("削除しました");
 		//DBからデータを削除
-		db.update("delete from memo where id=?", id);
+		db.update("delete from form where id=?", id);
 	}
 
 	//編集画面の表示(SELECT)
