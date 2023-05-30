@@ -10,6 +10,7 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
+
 		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
 			<input type="hidden" name="id" th:value="*{id}">
 			<p>日付：<input type="date" name="time" th:value="*{time}"></p>
@@ -18,7 +19,7 @@
 			<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
 			<input type="submit" value="更新">
 		</form>
-		<form action="#" method="get" th:action="@{/editCancel}">
+		<form action="#" method="get" th:action="@{/memo/view}">
 			<input type="submit" value="キャンセル">
 		</form>
 	</div>

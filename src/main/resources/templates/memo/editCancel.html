@@ -10,7 +10,9 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<h2>編集をキャンセルしますか？</h2>
-	<div th:object="${input}">
+	<div th:object="${form}">
+		日付：<span th:text="*{time}"></span>
+		メモ：<span th:text="*{memo}"></span>
 		<form action="#" method="get" th:action="@{/memo/view}">
 			<input type="submit" value="はい">
 		</form>
