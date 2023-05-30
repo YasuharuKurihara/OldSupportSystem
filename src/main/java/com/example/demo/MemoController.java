@@ -63,16 +63,16 @@ public class MemoController {
 			model.addAttribute("title", "入力内容　確認");
 			return "memo/add";
 		}
-		
+
 		model.addAttribute("title", "入力内容　確認");
-		
+
 		return "memo/addConfirm";
 	}
 
 	@RequestMapping("/memo/addCancel")
 	public String addCancel(Model model, Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		return "/memo/add";
+		return "/memo/addCancel";
 	}
 
 	@RequestMapping("/del/{id}")
@@ -116,12 +116,12 @@ public class MemoController {
 	//		//一覧画面へリダイレクト
 	//		return "memo/editComfirm";
 	//	}
-	
+
 	@RequestMapping("/editComfirm/{id}")
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
-		
+
 		model.addAttribute("title", "編集内容確認");
-		
+
 		return "memo/editComfirm";
 	}
 

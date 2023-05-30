@@ -12,7 +12,7 @@
     <h2 th:text="${title}"></h2>
     <p th:text="${msg}"></p>
     <div class="form-group my-3">
-     <form method="post" action="/deleteConfirm" th:object="${form}">
+     <form method="post" action="/deleteConfirm" th:object="${input}">
       <input type="hidden" 
           name="id" th:value="*{id}">
       <div class="alert alert-warning">

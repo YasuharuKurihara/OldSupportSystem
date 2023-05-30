@@ -38,52 +38,35 @@
 
 
 
-/* --- テーブル全体のスタイル指定 --------------- */
+<style type="text/css">
+ /* --- テーブル全体のスタイル指定 --------------- */
 .tableArea {
-	margin-left: 0;
-	/* 左寄せ     */
-	margin-right: auto;
-	/* 自動位置   */
-	border-collapse: separate;
-	/* 境界線結合 */
-	border-spacing: 1px;
-	/* 罫線間余白 */
-	font-size: 15pt;
-	/* 文字サイズ */
-	background: #ffffff;
-	/* テーブル全体の背景色 */
+  margin-left    : auto;             /* 自動位置   */
+  margin-right   : auto;             /* 自動位置   */
+  border-collapse: collapse;         /* 境界線結合 */
+  border-spacing : 0;                /* 罫線間余白 */
+  font-size      : 9pt;              /* 文字サイズ */
+  background     : #ffffff;          /* テーブル全体の背景色 */
 }
-
-/* --- ヘッダーのスタイル指定 ------------------- */
+ /* --- ヘッダーのスタイル指定 ------------------- */
 .tableArea th {
-	text-align: center;
-	/* 文字位置   */
-	font-weight: bold;
-	/* 太文字     */
-	padding: 0px 0px;
-	/* 余白       */
-	border: 1px #666666 solid;
-	/* 罫線       */
-	background: #ffff1a;
-	/* 背景色     */
+  text-align    : center;            /* 文字位置   */
+  font-weight   : bold;              /* 太文字     */
+  padding       : 0px 0px;           /* 余白       */
+  border        : 1px #666666 solid; /* 罫線       */
+  background    : rgba(0, 0, 0, 0.36);           /* 背景色     */
 }
-
-/* --- 明細のスタイル指定 ----------------------- */
+ /* --- 明細のスタイル指定 ----------------------- */
 .tableArea td {
-	text-align: center;
-	/* 文字位置   */
-	padding: 1px 10px;
-	/* 余白       */
-	border: 1px #666666 solid;
-	/* 罫線       */
+  text-align    : center;            /* 文字位置   */
+  padding       : 0px 0px;           /* 余白       */
+  border        : 1px #666666 solid; /* 罫線       */
 }
-
-/* --- 明細のｎ列スタイル指定 ------------------- */
-.tableArea tr td:nth-of-type(2n) {
-	background: rgba(255, 255, 26, 0.18);
-	/* 背景色     */
+ /* --- 明細のｎ行スタイル指定 ------------------- */
+.tableArea tr:nth-child(2n+1) {
+  background    : rgba(0, 0, 0, 0.12);           /* 背景色     */
 }
-
+</style>
 
 
 
