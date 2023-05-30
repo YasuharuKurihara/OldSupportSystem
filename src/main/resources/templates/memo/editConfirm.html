@@ -9,18 +9,18 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<div th:object="${input}">
+	<div th:object="${form}">
 		<h2>この内容で上書きしますか？</h2>
 		日付：<span th:text="*{time}"></span>
 		メモ：<span th:text="*{memo}"></span>
 
-		<form action="#" method="get" th:action="@{/editComfirm/__*{id}__/exe}">
+		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__/exe}">
 			<input type="hidden" name="id" th:value="*{id}">
 			<input type="hidden" name="time" th:value="*{time}">
 			<input type="hidden" name="memo" th:value="*{memo}">
 			<input type="submit" value="更新">
 		</form>
-		<form action="#" method="get" th:action="@{/memo/edit}">
+		<form action="#" method="get" th:action="@{/edit/__*{id}__}">
 			<input type="hidden" name="id" th:value="*{id}">
 			<input type="hidden" name="time" th:value="*{time}">
 			<input type="hidden" name="memo" th:value="*{memo}">

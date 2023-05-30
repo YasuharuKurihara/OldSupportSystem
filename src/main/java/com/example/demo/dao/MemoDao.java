@@ -91,7 +91,7 @@ public class MemoDao {
 		//コンソールに表示
 		System.out.println("編集の実行");
 		//UPDATEを実行
-		db.update("UPDATE form SET form = ? , time = ?  WHERE id = ?", entform.getMemo(), entform.getTime(), id);
+		db.update("UPDATE form SET memo = ? , time = ?  WHERE id = ?", entform.getMemo(), entform.getTime(), id);
 	}
 
 }

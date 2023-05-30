@@ -15,7 +15,7 @@
      <form method="post" action="/deleteConfirm" th:object="${input}">
       <input type="hidden" 
           name="id" th:value="*{id}">
-      <div class="alert alert-warning">
+      <div>
       <ul>
        <li>ID: <span th:text="*{id}"></span></li>
        <li>メモ: <span th:text="*{memo}"></span></li>

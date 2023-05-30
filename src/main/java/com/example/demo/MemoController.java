@@ -20,7 +20,6 @@ public class MemoController {
 	@RequestMapping("/home")
 	public String home(Model model, Input input) {
 		model.addAttribute("title1", "忘れ物防止メモ帳");
-		model.addAttribute("title2", "体調管理");
 		return "home";
 	}
 
@@ -72,15 +71,19 @@ public class MemoController {
 
 	@RequestMapping("/del/{id}")
 	public String del(@PathVariable Long id, Model model) {
-
-		model.addAttribute("title", "メモ 削除確認画面");
-		return "/memo/delete";
+	    model.addAttribute("title", "メモ 削除確認画面");  
+	    List<EntForm> list = memodao.selectOne(id);
+	    if (list != null && !list.isEmpty()) {
+	        model.addAttribute("memo", list.get(0));
+	    }
+	    return "/memo/delete";
 	}
+
 
 	@RequestMapping("/deleteConfirm/{id}")
 	public String destory(@PathVariable Long id, Model model) {
 		memodao.deleteDb(id);
-		return "redirect:/view";
+		return "redirect:/memo/view";
 	}
 
 	//更新画面の表示(SELECT)
@@ -99,10 +102,10 @@ public class MemoController {
 		return "memo/edit";
 	}
 
-	
-	@RequestMapping("/editCancel/{id}/")
-	public String editCancel(Model model, Input input, @PathVariable Long id) {
-		System.out.println("editCancel test");
+
+	@RequestMapping("/editCancel/")
+	public String editCancel(Model model, Input input) {
+
 		model.addAttribute("title", "編集キャンセル確認");
 		return "memo/editCancel";
 	}
@@ -121,14 +124,23 @@ public class MemoController {
 	//		return "memo/editComfirm";
 	//	}
 
-	@RequestMapping("/editComfirm/{id}")
+	@RequestMapping("/editConfirm/{id}")
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
 		model.addAttribute("title", "編集内容確認");
-		return "memo/editComfirm";
+
+		List<EntForm> list = memodao.selectOne(id);
+
+		//リストから、オブジェクトだけをピックアップ
+		EntForm entformdb = list.get(0);
+
+		//スタンバイしているViewに向かって、データを投げる
+		model.addAttribute("form", entformdb);
+		return "memo/editConfirm";
+
 	}
 
 	//更新処理(UPDATE)
-	@RequestMapping("/editComfirm/{id}/exe")
+	@RequestMapping("/editConfirm/{id}/exe")
 	public String editExe(@PathVariable Long id, Model model, Input input) {
 		//フォームの値をエンティティに入れ直し
 		EntForm entform = new EntForm();
