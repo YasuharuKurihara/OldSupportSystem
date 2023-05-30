@@ -103,7 +103,7 @@ public class MemoController {
 		return "memo/edit";
 	}
 
-	@RequestMapping("/editCancel/")
+	@RequestMapping("/editCancel")
 	public String editCancel(Model model, Input input) {
 		model.addAttribute("title", "編集キャンセル確認");
 		return "/memo/editCancel";
