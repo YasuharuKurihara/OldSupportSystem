@@ -100,7 +100,7 @@ public class MemoController {
 		return "memo/edit";
 	}
 
-	@RequestMapping("/editCancel/{id}/exe")
+	@RequestMapping("/editCancel/")
 	public String editCancel(Model model, Input input) {
 		model.addAttribute("title", "編集キャンセル確認");
 		return "/memo/editCancel";
@@ -114,16 +114,16 @@ public class MemoController {
 	//		return "memo/editComfirm";
 	//	}
 
-	@RequestMapping("/editComfirm/{id}")
+	@RequestMapping("/editConfirm/{id}")
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
 
 		model.addAttribute("title", "編集内容確認");
 
-		return "memo/editComfirm";
+		return "memo/editConfirm";
 	}
 
 	//更新処理(UPDATE)
-	@RequestMapping("/editComfirm/{id}/exe")
+	@RequestMapping("/editConfirm/{id}/exe")
 	public String editExe(@PathVariable Long id, Model model, Input input) {
 		//フォームの値をエンティティに入れ直し
 		EntForm entform = new EntForm();
