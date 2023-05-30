@@ -9,7 +9,7 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<div th:object="${input}">
+	<div th:object="${form}">
 		<h2>この内容で上書きしますか？</h2>
 		日付：<span th:text="*{time}"></span>
 		メモ：<span th:text="*{memo}"></span>
