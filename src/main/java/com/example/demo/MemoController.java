@@ -34,11 +34,7 @@ public class MemoController {
 	public String view(@Validated Input input, Model model,BindingResult result) {
 		//名前が決まれば変更
 		
-		EntForm entForm = new EntForm();
-		entForm.setMemo(input.getMemo());
-		entForm.setTime(input.getTime());
 		
-		memodao.insertDb(entForm);
 		List<EntForm> list = memodao.searchDb();
 		model.addAttribute("dbList", list);
 		model.addAttribute("title", "メモ一覧");
@@ -59,14 +55,18 @@ public class MemoController {
 			model.addAttribute("title", "入力内容　確認画面");
 			return "memo/add";
 		}
+		EntForm entForm = new EntForm();
+		entForm.setMemo(input.getMemo());
+		entForm.setTime(input.getTime());
 		
+		memodao.insertDb(entForm);
 		return "memo/addConfirm";
 	}
 	
 	@RequestMapping("/memo/addCancel")
 	public String addCancel(Model model,Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		return "/memo/add";
+		return "/memo/addCancel";
 	}
 	
 	@RequestMapping("/del/{id}")
