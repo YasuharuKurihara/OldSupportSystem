@@ -72,15 +72,19 @@ public class MemoController {
 
 	@RequestMapping("/del/{id}")
 	public String del(@PathVariable Long id, Model model) {
-
-		model.addAttribute("title", "メモ 削除確認画面");
-		return "/memo/delete";
+	    model.addAttribute("title", "メモ 削除確認画面");  
+	    List<EntForm> list = memodao.selectOne(id);
+	    if (list != null && !list.isEmpty()) {
+	        model.addAttribute("memo", list.get(0));
+	    }
+	    return "/memo/delete";
 	}
+
 
 	@RequestMapping("/deleteConfirm/{id}")
 	public String destory(@PathVariable Long id, Model model) {
 		memodao.deleteDb(id);
-		return "redirect:/view";
+		return "redirect:/memo/view";
 	}
 
 	//更新画面の表示(SELECT)
