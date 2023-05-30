@@ -18,7 +18,7 @@
 			<div th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}" th:text="${message}">エラー</div>
 			<input type="submit" value="更新">
 		</form>
-		<form action="#" method="get" th:action="@{/editCancel/__*{id}__}">
+		<form action="#" method="get" th:action="@{/editCancel}">
 			<input type="submit" value="キャンセル">
 		</form>
 	</div>
