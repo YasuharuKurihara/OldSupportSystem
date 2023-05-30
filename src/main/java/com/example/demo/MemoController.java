@@ -118,7 +118,13 @@ public class MemoController {
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
 
 		model.addAttribute("title", "編集内容確認");
+		List<EntForm> list = memodao.selectOne(id);
 
+		//リストから、オブジェクトだけをピックアップ
+		EntForm entformdb = list.get(0);
+
+		//スタンバイしているViewに向かって、データを投げる
+		model.addAttribute("form", entformdb);
 		return "memo/editConfirm";
 	}
 
