@@ -101,7 +101,8 @@ public class MemoController {
 
 	
 	@RequestMapping("/editCancel/{id}/")
-	public String editCancel(Model model, Input input) {
+	public String editCancel(Model model, Input input, @PathVariable Long id) {
+		System.out.println("editCancel test");
 		model.addAttribute("title", "編集キャンセル確認");
 		return "memo/editCancel";
 	}
