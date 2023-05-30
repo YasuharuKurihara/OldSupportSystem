@@ -53,7 +53,7 @@ public class MemoController {
 	@RequestMapping("/memo/add")
 	public String add(Model model, Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		return "/memo/add";
+		return "memo/add";
 	}
 
 	@RequestMapping("/memo/addConfirm")
@@ -72,13 +72,13 @@ public class MemoController {
 	@RequestMapping("/memo/addCancel")
 	public String addCancel(Model model, Input input) {
 		model.addAttribute("title", "メモ 新規作成");
-		return "/memo/addCancel";
+		return "memo/addCancel";
 	}
 
 	@RequestMapping("/del/{id}")
 	public String del(@PathVariable Long id, Model model) {
 		model.addAttribute("title", "メモ 削除確認");
-		return "/memo/delete";
+		return "memo/delete";
 	}
 
 	@RequestMapping("/deleteConfirm/{id}")
@@ -88,7 +88,7 @@ public class MemoController {
 	}
 
 	//更新画面の表示(SELECT)
-	@RequestMapping("memo/edit/{id}")
+	@RequestMapping("/memo/edit/{id}")
 	public String editView(@PathVariable Long id, Model model) {
 
 		//DBからデータを1件取ってくる(リストの形)
@@ -106,7 +106,7 @@ public class MemoController {
 	@RequestMapping("/editCancel/{id}/exe")
 	public String editCancel(Model model, Input input) {
 		model.addAttribute("title", "編集キャンセル確認");
-		return "/memo/editCancel";
+		return "memo/editCancel";
 	}
 
 	//(要)修正箇所　SpringBoot実行時エラーが起こる
