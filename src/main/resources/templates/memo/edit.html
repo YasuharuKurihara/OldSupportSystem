@@ -9,7 +9,7 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	<div th:object="${form}">
+	<div th:object="${input}">
 		<form action="#" method="get" th:action="@{/editConfirm/__*{id}__}">
 			<input type="hidden" name="id" th:value="*{id}">
 			<p>日付：<input type="date" name="time" th:value="*{time}"></p>
