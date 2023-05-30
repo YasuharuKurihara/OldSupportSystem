@@ -57,7 +57,6 @@ public class MemoController {
 		}
 
 		model.addAttribute("title", "入力内容　確認");
-
 		EntForm entForm = new EntForm();
 		
 			entForm.setMemo(input.getMemo());
@@ -127,9 +126,7 @@ public class MemoController {
 
 	@RequestMapping("/editComfirm/{id}")
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
-
 		model.addAttribute("title", "編集内容確認");
-
 		return "memo/editComfirm";
 	}
 
