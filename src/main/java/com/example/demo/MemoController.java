@@ -114,16 +114,22 @@ public class MemoController {
 	//		return "memo/editComfirm";
 	//	}
 
-	@RequestMapping("/editComfirm/{id}")
+	@RequestMapping("/editConfirm/{id}")
 	public String editComfirm(@PathVariable Long id, Model model, Input input) {
+		List<EntForm> list = memodao.selectOne(id);
 
+		//リストから、オブジェクトだけをピックアップ
+		EntForm entformdb = list.get(0);
+
+		//スタンバイしているViewに向かって、データを投げる
+		model.addAttribute("form", entformdb);
 		model.addAttribute("title", "編集内容確認");
 
 		return "memo/editComfirm";
 	}
 
 	//更新処理(UPDATE)
-	@RequestMapping("/editComfirm/{id}/exe")
+	@RequestMapping("/editConfirm/{id}/exe")
 	public String editExe(@PathVariable Long id, Model model, Input input) {
 		//フォームの値をエンティティに入れ直し
 		EntForm entform = new EntForm();
@@ -134,7 +140,7 @@ public class MemoController {
 		//更新の実行
 		memodao.updateDb(id, entform);
 		//一覧画面へリダイレクト
-		return "redirect:/memo/view";
+		return "redirect:/view";
 	}
 
 }
