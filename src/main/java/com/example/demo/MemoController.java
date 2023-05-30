@@ -103,7 +103,7 @@ public class MemoController {
 		return "/memo/editCancel";
 	}
 	
-	//要修正箇所　＊SpringBootの実行エラーが起こる
+	//(要)修正箇所　SpringBoot実行時エラーが起こる
 //	@RequestMapping("/editComfirm/{id}/exe")
 //	public String editConfirm(@PathVariable Long id, Model model, Input input) {
 //		model.addAttribute("title", "編集確認画面");
