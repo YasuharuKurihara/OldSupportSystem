@@ -10,19 +10,21 @@
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${input}">
-		<h2>この内容を取り消しますか
-		</h2>
-		日付：<span th:text="*{time}"></span>
-		メモ：<span th:text="*{memo}"></span>
+		<h2>新規作成をキャンセルしますか</h2>
+<!--		<h2>この内容を取り消しますか</h2>-->
+<!--		<p>日付：<span th:text="*{time}"></span><br>-->
+<!--		メモ：<span th:text="*{memo}"></span></p>-->
 	</div>
 	<div>
 		<form th:action="@{/home}">
-			<input type="submit" value="キャンセルする">
+			<input type="submit" value="キャンセルする" class="button">
 		</form>
 	</div>
 	<div>
 		<form th:action="@{/memo/add}">
-			<input type="submit" value="キャンセルしない" />
+<!--			<input type="hidden" name="time" th:value="*{time}">-->
+<!--			<input type="hidden" name="memo" th:value="*{memo}">-->
+			<input type="submit" value="キャンセルしない" class="button">
 		</form>
 
 	</div>
