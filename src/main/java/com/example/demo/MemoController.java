@@ -19,7 +19,7 @@ public class MemoController {
 	//ホーム画面にアクセスされたとき
 	@RequestMapping("/home")
 	public String home(Model model, Input input) {
-		model.addAttribute("title1", "忘れ物防止メモ帳");
+		model.addAttribute("title1", "忘れ物防止・健康管理メモ帳");
 		return "home";
 	}
 
